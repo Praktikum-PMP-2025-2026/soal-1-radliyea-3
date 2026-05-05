@@ -15,9 +15,9 @@ noted; gunakan ()[]{} aja, huruf diabaikan, kurung harus berpasangan dan terttut
 
 #include <stdio.h>
 int main(){
-    char a[10]; //input string
+    char a[100]; //input string
     scanf("%s", a);
-    char stack[10];
+    char stack[100];
     int top = -1; 
     for(int i = 0; a[i] != '\0'; i++){ //loop tiap karakter
         if(a[i] == '(' || a[i] == '['|| a[i] == '{'){ //masukin stack aja
