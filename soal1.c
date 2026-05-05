@@ -45,11 +45,11 @@ int main(){
         top --; //kalo cocok pop in
         //ada huruf skip aja
     }
-    if(top == -1){
+    if(top != -1){
+        printf("INVALID\n");
+    }else{
         printf("VALID\n");
-        else{
-            printf("INVALID\n");
-        }
     }
     return 0;
 }
+
