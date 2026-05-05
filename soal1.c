@@ -16,7 +16,7 @@ noted; gunakan ()[]{} aja, huruf diabaikan, kurung harus berpasangan dan terttut
 #include <stdio.h>
 int main(){
     char a[10]; //input string
-    scanf("%s",a);
+    scanf("%s", a);
     char stack[10];
     int top = -1; 
     for(int i = 0; a[i] != '\0'; i++){ //loop tiap karakter
@@ -30,20 +30,20 @@ int main(){
                 return 0;
             }
             //pasangin cocok apa ga
-            if(a[i] == ')' && stack[top] != '('){ //yang () dulu ya
+            if(a[i] == ')' && stack[top] != '('){
                 printf("INVALID\n");
                 return 0;
             }
-            if(a[i] == ']' && stack[top] != '['){ //yang {} 
+            if(a[i] == ']' && stack[top] != '['){
                 printf("INVALID\n");
                 return 0;
             }
-            if(a[i] == '}' && stack[top] != '{'){ //terakhir []
+            if(a[i] == '}' && stack[top] != '{'){
                 printf("INVALID\n");
                 return 0;
             }
+            top --; //kalo cocok pop aja
         }
-        top --; //kalo cocok pop in
         //ada huruf skip aja
     }
     if(top != -1){
@@ -53,4 +53,3 @@ int main(){
     }
     return 0;
 }
-
