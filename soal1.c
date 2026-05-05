@@ -15,12 +15,12 @@ noted; gunakan ()[]{} aja, huruf diabaikan, kurung harus berpasangan dan terttut
 
 #include <stdio.h>
 int main(){
-    char a[10];
+    char a[10]; //input string
     scanf("%s",a);
     char stack[10];
     int top = -1; 
-    for(int i = 0; a[i] != '\0'; i++){
-        if(a[i] == '(' || a[i] == '['|| a[i] == '{'){
+    for(int i = 0; a[i] != '\0'; i++){ //loop tiap karakter
+        if(a[i] == '(' || a[i] == '['|| a[i] == '{'){ //masukin stack aja
             top++;
             stack[top] = a[i];
         }
@@ -34,13 +34,14 @@ int main(){
                 printf("INVALID\n");
                 return 0;
             }
-            if(a[i] == '[' && stack[top] != '{'){ //yang {} 
+            if(a[i] == ']' && stack[top] != '['){ //yang {} 
                 printf("INVALID\n");
                 return 0;
             }
-            if(a[i] == ']' && stack[top] != '['); //terakhir []
-            printf("INVALID\n");
-            return 0;
+            if(a[i] == '}' && stack[top] != '{'){ //terakhir []
+                printf("INVALID\n");
+                return 0;
+            }
         }
         top --; //kalo cocok pop in
         //ada huruf skip aja
